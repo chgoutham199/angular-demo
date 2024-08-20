@@ -1,0 +1,42 @@
+<p>for-switch works!</p>
+<div>
+    @for(item of items ; track $index ){
+        <p>{{item}}</p>
+    }
+</div>
+<input placeholder="enter a day" [(ngModel)]="day">
+ <div>
+    @switch (day) {
+        @case ('1') {
+            <p>Monday</p>
+        }
+        @case ('1') {
+            <p>Monday</p>
+        }
+        @case ('2') {
+            <p>Tuesday</p>
+        }
+        @case ('3') {
+            <p>Wednesday</p>
+        }
+        @case ('4') {
+            <p>Thursday</p>
+        }
+        @case ('5') {
+            <p>Friday</p>
+        }
+        @case ('6') {
+            <p>Saturday</p>
+        }
+        @case ('7') {
+            <p>Sunday</p>
+        }
+        @default {
+            <p>Enter range between 1-7</p>
+        }
+    }
+ </div>
+
+
+
+<button (click)="goToHome()">Go to Home</button>
