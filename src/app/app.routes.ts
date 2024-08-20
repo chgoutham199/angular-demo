@@ -5,25 +5,24 @@ import { ControlflowComponent } from './controlflow/controlflow.component';
 import { ForSwitchComponent } from './for-switch/for-switch.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 export const routes: Routes = [
-       {
-          path:'hero',
-          component: HerosComponent,
-       },
-       {
-         path:'heros-list',
-         component:HerosListComponent,
-       },
-       {
-        path:'controlflow',
-        component:ControlflowComponent,
-       },
-       {
-        path:'forswitch',
-        component:ForSwitchComponent,
-       },
-       {
-        path: 'forms',
-        component:ReactiveformsComponent,
-       }
-
+  {
+    path: 'hero',
+    component: HerosComponent,
+  },
+  {
+    path: 'heros-list',
+    component: HerosListComponent,
+  },
+  {
+    path: 'controlflow',
+    component: ControlflowComponent,
+  },
+  {
+    path: 'forswitch',
+    component: ForSwitchComponent,
+  },
+  {
+    path: 'forms',
+    component: ReactiveformsComponent,
+  },
 ];

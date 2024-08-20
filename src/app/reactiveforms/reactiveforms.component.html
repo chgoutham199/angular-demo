@@ -1,37 +1,52 @@
-<p>Welcome to reactive Forms </p>
-<form>
-     <div>
-        <label>firstName</label>
-        <input >
-     </div>
-     <div>
-        <label>lastname</label>
-        <input >
-     </div>
-     <div>
-        <label>username</label>
-        <input >
-     </div>
-     <div>
-        <label>email</label>
-        <input >
-     </div>
-     <div>
-        <label>phone</label>
-        <input >
-     </div>
-     <div>
-        <label>country</label>
-        <select>
-            <option >India</option>
-            <option >USA</option>
-            <option >Russia"></option>
-            <option> China</option>
-        </select>
-     </div>
+<p>Welcome to reactive Forms</p>
+<form [formGroup]="studentForm">
+  <div>
+    <label>firstName</label>
+    <input type="text" formControlName="fname">
+    @if (studentForm.controls['fname'].touched && studentForm.controls['fname'].errors?.['required']) {
+      <div>first name is required</div>
 
-
-
-
-
+    }
+    @else if (studentForm.controls['fname'].touched && studentForm.controls['fname'].errors?.['minlength']) {
+      <div>first name should be minimum 3 characters</div>
+    }
+  </div>
+  <div>
+    <label>lastname</label>
+    <input type="text" formControlName="lname">
+  </div>
+  <div>
+    <label>username</label>
+    <input  type="text" formControlName="uname">
+  </div>
+  <div>
+    <label>email</label>
+    <input type="text" formControlName="email">
+   @if (
+      studentForm.controls['email'].touched &&
+      studentForm.controls['email'].errors?.['email']
+   ) {
+      <div>email is invalid</div>
+   }
+  </div>
+  <div>
+    <label>phone</label>
+    <input type= "text" formControlName="phone">
+  </div>
+  <div>
+    <label>country</label>
+    <select formControlName="country">
+      <option selected disabled  >select</option>
+      <option>India</option>
+      <option>USA</option>
+      <option>Russia</option>
+      <option>China</option>
+    </select>
+  </div>
+  <button (click)="onClear()">clear</button>
+  <button  [disabled]="studentForm.invalid" (click)="onSubmit()">submit</button>
 </form>
+
+<div>
+   {{formData |json}}
+</div>
