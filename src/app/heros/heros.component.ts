@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-
+import { Router, RouterLink } from '@angular/router';
+// import { Route } from '@angular/router';
 @Component({
   selector: 'app-heros',
   standalone: true,
@@ -10,4 +10,11 @@ import { RouterLink } from '@angular/router';
 })
 export class HerosComponent {
 
+   constructor(private router:Router){
+
+   }
+     
+   goToHome(){
+    this.router.navigateByUrl('');
+   }
 }
