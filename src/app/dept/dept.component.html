@@ -1,0 +1,16 @@
+<p>dept works!</p>
+<h2>Department Details</h2>
+<!-- {{details |json}} -->
+<select (change)="getDetails(idFetch)" [(ngModel)]="idFetch">
+    <option disabled selected>
+       select products
+    </option >
+    <!-- <option *ngFor="let item of details"><p ()="getLogs()">{{item.id}}</p></option> -->
+    @for (item of details; let id=$index ;track id) {
+        <option [value]="item.id"  >{{item.id}}. {{item.title}}</option>
+    }
+
+</select>
+<!-- <button (click)="getDept()">Get Department details</button> -->
+<h4>Product Details</h4> 
+   {{idDetails |json}}

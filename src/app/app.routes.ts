@@ -4,6 +4,7 @@ import { HerosListComponent } from './heros-list/heros-list.component';
 import { ControlflowComponent } from './controlflow/controlflow.component';
 import { ForSwitchComponent } from './for-switch/for-switch.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
+import { DeptComponent } from './dept/dept.component';
 export const routes: Routes = [
   {
     path: 'hero',
@@ -25,4 +26,8 @@ export const routes: Routes = [
     path: 'forms',
     component: ReactiveformsComponent,
   },
+  {
+    path:'dept',
+    component:DeptComponent
+  }
 ];
